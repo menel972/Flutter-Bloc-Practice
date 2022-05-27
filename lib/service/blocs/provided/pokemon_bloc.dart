@@ -7,8 +7,12 @@ import 'package:test_bloc/service/blocs/bloc.dart';
 import 'package:test_bloc/service/models/pokemon/pokemon_model.dart';
 
 class PokemonBloc extends Bloc {
-  PokemonBloc(String pkmn) {
-    fetchPokemon(pkmn);
+  PokemonBloc(String? pkmn, Pokemon? pokemon, {required bool fetch}) {
+    if (fetch) {
+      fetchPokemon(pkmn!);
+    } else {
+      showPokemon(pokemon!);
+    }
   }
 
   final _streamController = StreamController<Pokemon>();
@@ -18,6 +22,10 @@ class PokemonBloc extends Bloc {
 
   fetchPokemon(String pkmn) async {
     final Pokemon pokemon = await PokemonApi().fetchPokemon(pkmn);
+    _sink.add(pokemon);
+  }
+  
+  showPokemon(Pokemon pokemon) {
     _sink.add(pokemon);
   }
 

@@ -32,13 +32,6 @@ class PokedexCardLoading extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Shimmer.fromColors(
-                        baseColor: Colors.black45,
-                        highlightColor: Colors.black12,
-                        child: const Text('No. 000')),
-                  ),
                   Shimmer.fromColors(
                       baseColor: Colors.black45,
                       highlightColor: Colors.black12,

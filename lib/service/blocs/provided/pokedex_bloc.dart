@@ -8,8 +8,8 @@ import 'package:test_bloc/service/models/pokedex/results_model.dart';
 import '../bloc.dart';
 
 class PokedexBloc extends Bloc {
-  PokedexBloc(String filter) {
-    fetchPokedex(filter);
+  PokedexBloc() {
+    fetchPokedex('');
   }
 
   final _streamController = StreamController<List<Results>>();
