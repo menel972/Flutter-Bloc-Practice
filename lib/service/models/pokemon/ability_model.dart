@@ -1,20 +1,17 @@
-class Urls {
-  String? type;
+class Ability {
+  String? name;
   String? url;
 
-  Urls({
-    this.type,
-    this.url,
-  });
+  Ability({this.name, this.url});
 
-  Urls.fromJson(Map<String, dynamic> json) {
-    type = json['type'];
+  Ability.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
     url = json['url'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['type'] = type;
+    data['name'] = name;
     data['url'] = url;
     return data;
   }
