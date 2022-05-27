@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' show json, utf8;
 import 'package:crypto/crypto.dart';
 import 'package:test_bloc/service/models/character_model.dart';
+import 'package:test_bloc/service/models/results_model.dart';
 
 class MarvelApi {
   String md5Generator(String input) {
@@ -22,8 +23,8 @@ class MarvelApi {
 // = Request Urls
   String _allCharacters(String startWith) {
     return startWith == ''
-        ? '${_baseUrl}characters?apikey=$_publicKey&hash=$_hash&ts=$_ts'
-        : '${_baseUrl}characters?nameStartsWith=$startWith&apikey=$_publicKey&hash=$_hash&ts=$_ts';
+        ? '${_baseUrl}characters?limit=100&apikey=$_publicKey&hash=$_hash&ts=$_ts'
+        : '${_baseUrl}characters?nameStartsWith=$startWith&limit=100&apikey=$_publicKey&hash=$_hash&ts=$_ts';
   }
 
 // {} Requests
@@ -33,10 +34,9 @@ class MarvelApi {
     return Character.fromJson(body);
   }
 
-  fetchCharacters(String startWith) async {
-    await request(_allCharacters(startWith))
-        .then((character) =>
-            print('value : ${character.data!.results!.first.name}'))
-        .catchError((e) => print('error : $e'));
+  Future<List<Results>> fetchCharacters(String startWith) async {
+    final Character character = await request(_allCharacters(startWith));
+
+    return character.data!.results!;
   }
 }
