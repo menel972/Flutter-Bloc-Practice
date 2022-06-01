@@ -12,7 +12,7 @@ Recently I learned how to use BLoC for the state management in Flutter.I made th
 <p align="center">
 <img alt="Firebase" src="https://img.shields.io/badge/Firebase-D19222?style=flat-square&logo=firebase&logoColor=white" />
   <a href="https://pokeapi.co/">
-<img alt="radar" src="https://img.shields.io/badge/PokeApi-02569B?style=flat-square&logo=pokemon&logoColor=white" />
+<img alt="radar" src="https://img.shields.io/badge/PokeApi-D19222?style=flat-square&logo=pokemon&logoColor=white" />
     </a>
 </p>
 
