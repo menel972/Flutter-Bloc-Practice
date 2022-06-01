@@ -4,6 +4,7 @@ Recently I learned how to use BLoC for the state management in Flutter.I made th
 
 <p align="center">
 <img alt="Flutter" src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
+<img alt="Flutter" src="https://img.shields.io/badge/BLoC-02569B?style=flat-square&logo=flutter&logoColor=white" />
   <a href="https://pub.dev/packages/radar_chart">
 <img alt="radar" src="https://img.shields.io/badge/RadarChart-02569B?style=flat-square&logo=flutter&logoColor=white" />
     </a>
