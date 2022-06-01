@@ -1,4 +1,4 @@
-# About Gypse Quiz App
+# About Flutter-BLoC-Pokedex App
 
 Recently I learned how to use BLoC for the state management in Flutter.I made this Pokedex app to apply this new pattern.
 
