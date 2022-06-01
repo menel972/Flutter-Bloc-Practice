@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:test_bloc/service/blocs/bloc_provider.dart';
 import 'package:test_bloc/service/blocs/provided/pokedex_bloc.dart';
+import 'package:test_bloc/service/blocs/provided/stats_bloc.dart';
 import 'package:test_bloc/views/details/pokemon_detailed_view.dart';
 import 'package:test_bloc/views/details/widgets/pokemon_pictures.dart';
+import 'package:test_bloc/views/details/widgets/pokemon_stats.dart';
 import 'package:test_bloc/views/home/widgets/pokedex_list.dart';
 
 import '../../components/cards/pokedex_card.dart';
 import '../models/pokemon/pokemon_model.dart';
+import '../models/pokemon/stats_model.dart';
 import 'provided/pokemon_bloc.dart';
 
 class BlocRouter {
@@ -28,4 +31,6 @@ class BlocRouter {
       BlocProvider<PokemonBloc>(
           bloc: PokemonBloc(null, pokemon, fetch: false),
           child: const PokemonPictures());
+  BlocProvider pokemonStats(List<Stats> stats) => BlocProvider<StatsBloc>(
+      bloc: StatsBloc(stats), child: const PokemonStats());
 }

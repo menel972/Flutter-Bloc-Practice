@@ -8,9 +8,9 @@ import '../models/pokemon/pokemon_model.dart';
 
 class PokemonApi {
   // = Urls
-  final String _baseUrl = 'https://pokeapi.co/api/v2/pokemon';
-  final String _suffixPkmn = '/';
-  final String _suffixLimit = '?limit=';
+  final String _baseUrl = 'https://pokeapi.co/api/v2/';
+  final String _suffixPkmn = 'pokemon/';
+  final String _suffixLimit = 'pokemon?limit=';
 
   // {} Fetch Data
   Future<List<Results>> fetchPokedex(String limit) async {
@@ -25,7 +25,21 @@ class PokemonApi {
     final result = await request(url);
     return Pokemon.fromJson(result);
   }
+  // fetch one pokemon overview datas
+
+  Future<Pokemon> fetchPokemonDetails(String url) async {
+    final result = await request(url);
+    // TODO : Class PokemonDetails
+    return Pokemon.fromJson(result);
+  }
   // fetch one pokemon detailed datas
+
+  Future<Pokemon> fetchEvolutionChain(String url) async {
+    final result = await request(url);
+    // TODO : Class EvolutionChain
+    return Pokemon.fromJson(result);
+  }
+  // fetch one pokemon evolution chain
 
   // {} Request
   Future<Map<String, dynamic>> request(String url) async {

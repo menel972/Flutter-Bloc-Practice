@@ -25,12 +25,8 @@ class PokemonPictures extends StatelessWidget {
                 children: [
                   Flexible(
                     flex: 4,
-                    child: Hero(
-                      transitionOnUserGestures: true,
-                      tag: 'pkmnOfficial',
-                      child: Image.network(
-                          pkmn.sprites!.other!.officialArtwork!.frontDefault!),
-                    ),
+                    child: Image.network(
+                        pkmn.sprites!.other!.officialArtwork!.frontDefault!),
                   ),
                   Flexible(
                     flex: 1,

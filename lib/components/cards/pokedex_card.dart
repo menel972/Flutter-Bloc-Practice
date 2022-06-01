@@ -42,30 +42,24 @@ class PokedexCard extends StatelessWidget {
                             color: Colors.black12,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Hero(
-                            transitionOnUserGestures: true,
-                            tag: 'pkmnOfficial',
-                            child: Image.network(
-                              pkmn.sprites!.other!.officialArtwork!
-                                  .frontDefault!,
-                              loadingBuilder:
-                                  (context, child, loadingProgress) {
-                                if (loadingProgress == null) return child;
+                          child: Image.network(
+                            pkmn.sprites!.other!.officialArtwork!.frontDefault!,
+                            loadingBuilder: (context, child, loadingProgress) {
+                              if (loadingProgress == null) return child;
 
-                                return Shimmer.fromColors(
-                                  baseColor: Colors.black45,
-                                  highlightColor: Colors.black12,
-                                  child: Container(
-                                    height: size.height * 0.5,
-                                    color: Colors.black45,
-                                    alignment: Alignment.center,
-                                    child: const CircularProgressIndicator(
-                                      color: Colors.white,
-                                    ),
+                              return Shimmer.fromColors(
+                                baseColor: Colors.black45,
+                                highlightColor: Colors.black12,
+                                child: Container(
+                                  height: size.height * 0.5,
+                                  color: Colors.black45,
+                                  alignment: Alignment.center,
+                                  child: const CircularProgressIndicator(
+                                    color: Colors.white,
                                   ),
-                                );
-                              },
-                            ),
+                                ),
+                              );
+                            },
                           ),
                         ),
                         Padding(

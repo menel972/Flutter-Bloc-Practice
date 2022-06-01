@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
 
     return Scaffold(
       appBar: const PreferredSize(
-        child: AppbarComponent(title: 'I ❤️ POKEMON'),
+        child: AppbarComponent(title: 'Flutter BLoC Pokedex'),
         preferredSize: Size(double.infinity, 50),
       ),
 
